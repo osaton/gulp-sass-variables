@@ -1,0 +1,10 @@
+$ENV: 'development' !default;
+$test-var: #000;
+
+@if($ENV == 'production') {
+  $test-var: #fff;
+}
+
+body {
+  color: $test-var;
+}
