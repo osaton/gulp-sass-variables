@@ -1,0 +1,29 @@
+{
+  "name": "gulp-sass-variables",
+  "version": "0.0.1",
+  "description": "Define scss variables in your gulp task",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/osaton/gulp-sass-variables.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "gulp-sass-variables",
+    "environment variabes",
+    "sass",
+    "scss"
+  ],
+  "author": "osaton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osaton/gulp-sass-variables/issues"
+  },
+  "homepage": "https://github.com/osaton/gulp-sass-variables",
+  "devDependencies": {
+    "mocha": "^3.0.2"
+  }
+}
