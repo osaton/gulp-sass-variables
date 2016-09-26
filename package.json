@@ -1,6 +1,6 @@
 {
   "name": "gulp-sass-variables",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Define scss variables in your gulp task",
   "main": "index.js",
   "scripts": {
