@@ -18,7 +18,7 @@ var gulp = require('gulp'),
     sassVariables = require('gulp-sass-variables'),
     sass = require('gulp-sass');
 
-// Upload all folders
+// Compile css
 gulp.task('css', function () {
   return gulp.src('./src/scss/master.scss')
              .pipe(sassVariables({
