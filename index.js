@@ -3,6 +3,7 @@
 const PLUGIN_NAME = 'gulp-sass-variables';
 
 let gutil = require('gulp-util'),
+    parse = require('parse-sass-value'),
     PluginError = gutil.PluginError,
     through = require('through2');
 
@@ -10,7 +11,7 @@ let getVariablesBuffer = function(sassVariables, file) {
   let str = '';
   
   for(let variable in sassVariables) {
-    str += variable + ': ' + JSON.stringify(sassVariables[variable]) + ';\n';
+    str += variable + ': ' + parse(sassVariables[variable], { quote: 'double' }) + ';\n';
   }
 
   return new Buffer(str, file);
