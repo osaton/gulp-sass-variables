@@ -2,11 +2,10 @@
 
 const PLUGIN_NAME = 'gulp-sass-variables';
 
-let gutil = require('gulp-util'),
-    PluginError = gutil.PluginError,
-    through = require('through2');
+const PluginError = require('plugin-error');
+const through = require('through2');
 
-let getVariablesBuffer = function(sassVariables, file) {
+const getVariablesBuffer = function(sassVariables, file) {
   let str = '';
   
   for(let variable in sassVariables) {
