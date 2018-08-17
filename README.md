@@ -1,7 +1,7 @@
 ## What is this
 Add Sass variables to gulp stream, so that you can use for example environment variables in your Sass build process.
 
-Supports strings, numbers and booleans.
+Supports strings, numbers, booleans, and hex colors.
 
 ## Installation
 
@@ -37,5 +37,20 @@ $path: '/dev/path/' !default;
 
 @if($env == 'production') {
   $path: '/prod/path';
+}
+```
+
+## Options
+### allowHexColors 
+(bool) - when true, will print hex colors as colors instead of strings
+```javascript
+gulp.src('./src/scss/master.scss')
+  .pipe(sassVariables({
+    $color-primary: '#800080'
+  }, { allowHexColors: true }))
+```
+```scss
+body {
+  color: $color-primary;
 }
 ```
