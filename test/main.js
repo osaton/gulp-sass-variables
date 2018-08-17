@@ -118,6 +118,29 @@ describe('gulp-sass-variables', function() {
     stream.write(sassFile);
   });
 
+  it('should work with hex colors when allowHexColors is true', function (done) {
+    let stream = sassVariables({
+      $LONGCOLOR: '#800080',
+      $SHORTCOLOR: '#f0f'
+    }, { allowHexColors: true });
+
+    let sassFile = createVinyl('color-test.scss');
+
+    stream.on('data', function(file) {
+      should.exist(file);
+      should.exist(file.path);
+      should.exist(file.relative);
+      should.exist(file.contents);
+      should.equal(path.basename(file.path), 'color-test.scss');
+      String(file.contents).should.equal(
+        fs.readFileSync(path.join(__dirname, 'expected/color-test.scss'), 'utf8')
+      );
+      done();
+    });
+
+    stream.write(sassFile);
+  });
+
   it('should work with gulp-sass', function (done) {
     let streamDoneCount = 0;
 
