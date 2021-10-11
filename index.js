@@ -7,9 +7,10 @@ const through = require('through2');
 
 const getVariablesBuffer = function(sassVariables, file) {
   let str = '';
+  let strEndLine = file.extname === '.sass' ? '\n' : ';\n';
   
   for(let variable in sassVariables) {
-    str += variable + ': ' + JSON.stringify(sassVariables[variable]) + ';\n';
+    str += variable + ': ' + JSON.stringify(sassVariables[variable]) + strEndLine;
   }
 
   return new Buffer(str, file);
